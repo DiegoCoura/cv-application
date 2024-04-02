@@ -1,7 +1,7 @@
 import { useState } from "react";
-import EducationForm from "./EducationForm";
+import ExperienceForm from "./ExperienceForm";
 
-export default function EducationSection({  onSubmit }) {
+export default function ExperienceSection() {
   const [showMenu, setShowMenu] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
@@ -14,16 +14,16 @@ export default function EducationSection({  onSubmit }) {
   };
 
   return (
-    <div className="education-section">
+    <div className="experience-section">
       <button onClick={toggleShowMenu}>
-        <h2>Education</h2>
+        <h2>Experience</h2>
       </button>
       {showMenu && (
         <div className="menu">
           {showForm ? (
-            <EducationForm handleCancel={toggleShowForm} onSubmit={onSubmit} />
+            <ExperienceForm handleCancel={toggleShowForm} />
           ) : (
-            <button onClick={toggleShowForm}>+ Education</button>
+            <button onClick={toggleShowForm}>+ Experience</button>
           )}
         </div>
       )}
